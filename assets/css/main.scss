@@ -1,0 +1,137 @@
+:root {
+  /*Mis Variables*/
+  --verde: #02b290;
+}
+
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.header {
+  height: 80px;
+}
+
+.icon-carrito {
+  transition: background-color 300ms;
+  &:hover {
+    background-color: #ffae00;
+    color: white;
+  }
+
+  &__cantidad {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    color: white;
+  }
+}
+
+.sidebar-menu {
+  background-color: #fafafa;
+  padding: 1.5rem 1rem;
+  // height: calc(100vh - 80px);
+  height: 100vh;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 300ms;
+  overflow-y: scroll;
+
+  @media (min-width: 1024px) {
+    width: 460px;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.productos {
+  // background: red;
+
+  &-container {
+    display: grid;
+    // grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    
+
+    @media (min-width: 560px) {
+      // grid-template-columns: repeat(2, 1fr);
+      font-size: 16px !important;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+
+.producto {
+  height: 400px;
+  max-height: 400px;
+
+  @media (max-width: 560px) {
+    height: 380px;
+  }
+
+  .product-body{
+    height: 300px;
+    max-height: 300px;
+    @media (max-width: 560px) {
+      height: 200px;
+    }
+  }
+  .product-footer{
+    position: relative;
+    height: 80px;
+
+    @media (max-width: 560px) {
+      height: 60px;
+    }
+
+    .btn{
+      position: absolute;
+      bottom: 5px;
+      height: 50px;
+
+      @media (max-width: 560px) {
+        width: 80%;
+        height: 60px;
+        bottom: -100px;
+      }
+    }
+  }
+}
+
+.producto-carrito {
+  border-bottom: 1px solid red;
+  &__imagen {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__precio {
+  }
+
+  &__cantidad {
+  }
+}
+
+.btn-verde {
+  background-color: var(--verde);
+}
